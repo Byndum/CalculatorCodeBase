@@ -31,6 +31,7 @@ jobs:
             dotnet stryker
 
       - name: Collect Coverage Report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
             name: CoverageReport-files
@@ -38,6 +39,7 @@ jobs:
         # Complete this step sp it uploads the coverage report to the artifacts - make it run always even if previous steps fail
 
       - name: Collect Stryker Report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
             name: StrykerReport-files
