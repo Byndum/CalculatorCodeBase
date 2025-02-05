@@ -45,7 +45,7 @@ public class CachedCalculatorTest
         calc.Add(a, b);
 
         // Assert
-        Assert.That(calc._cache, Is.EqualTo(null));
+        Assert.That(calc._cache.Count, Is.EqualTo(0));
     }
     [Test]
     public void Subtract()
