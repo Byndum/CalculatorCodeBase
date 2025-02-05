@@ -19,7 +19,7 @@ public class CachedCalculatorTest
         Assert.That(result, Is.EqualTo(5));
     }
     [Test]
-    public void Add_ValidInputCached()
+    public void Add_Cached()
     {
         // Arrange
         var calc = new CachedCalculator();
@@ -48,6 +48,21 @@ public class CachedCalculatorTest
         Assert.That(result, Is.EqualTo(2));
     }
     [Test]
+    public void Subtract_Cached()
+    {
+        // Arrange
+        var calc = new CachedCalculator();
+        var a = 5;
+        var b = 3;
+
+        // Act
+        calc.Subtract(a, b);
+        var result = calc.Subtract(a, b);
+
+        // Assert
+        Assert.That(result, Is.EqualTo(2));
+    }
+    [Test]
     public void Multiply()
     {
         // Arrange
@@ -62,6 +77,21 @@ public class CachedCalculatorTest
         Assert.That(result, Is.EqualTo(10));
     }
     [Test]
+    public void Multiply_Cached()
+    {
+        // Arrange
+        var calc = new CachedCalculator();
+        var a = 5;
+        var b = 2;
+
+        // Act
+        calc.Multiply(a, b);
+        var result = calc.Multiply(a, b);
+
+        // Assert
+        Assert.That(result, Is.EqualTo(10));
+    }
+    [Test]
     public void Divide()
     {
         // Arrange
@@ -70,6 +100,21 @@ public class CachedCalculatorTest
         var b = 2;
 
         // Act
+        var result = calc.Divide(a, b);
+
+        // Assert
+        Assert.That(result, Is.EqualTo(5));
+    }
+    [Test]
+    public void Divide_Cached()
+    {
+        // Arrange
+        var calc = new CachedCalculator();
+        var a = 10;
+        var b = 2;
+
+        // Act
+        calc.Divide(a, b);
         var result = calc.Divide(a, b);
 
         // Assert
