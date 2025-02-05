@@ -98,4 +98,43 @@ public class SimpleCalculatorTest
             () => calc.Factorial(invalidVal)
         );
     }
+    [Test]
+    public void IsPrime_ValidPossitiveInt_IsPrime()
+    {
+        // Arrange
+        var calc = new SimpleCalculator();
+        var a = 7;
+
+        // Act
+        var result = calc.IsPrime(a);
+
+        // Assert
+        Assert.IsTrue(result);
+    }
+    [Test]
+    public void IsPrime_ValidPossitiveInt_IsNotPrime()
+    {
+        // Arrange
+        var calc = new SimpleCalculator();
+        var a = 4;
+
+        // Act
+        var result = calc.IsPrime(a);
+
+        // Assert
+        Assert.IsFalse(result);
+    }
+    [Test]
+    public void IsPrime_Integer1_IsNotPrime()
+    {
+        // Arrange
+        var calc = new SimpleCalculator();
+        var a = 1;
+
+        // Act
+        var result = calc.IsPrime(a);
+
+        // Assert
+        Assert.IsFalse(result);
+    }
 }
