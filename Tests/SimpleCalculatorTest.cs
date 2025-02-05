@@ -94,9 +94,9 @@ public class SimpleCalculatorTest
         var invalidVal = -1;
 
         // Act + Assert
-        Assert.Throws<ArgumentException>(
+        Assert.That(Assert.Throws<ArgumentException>(
             () => calc.Factorial(invalidVal)
-        );
+        ).Message, Is.EqualTo("Factorial is not defined for negative numbers"));
     }
     [Test]
     public void IsPrime_ValidPossitiveInt_IsPrime()
