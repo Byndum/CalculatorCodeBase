@@ -19,6 +19,21 @@ public class CachedCalculatorTest
         Assert.That(result, Is.EqualTo(5));
     }
     [Test]
+    public void Add_ValidInputCached()
+    {
+        // Arrange
+        var calc = new CachedCalculator();
+        var a = 2;
+        var b = 3;
+
+        // Act
+        calc.Add(a, b);
+        var result = calc.Add(a, b);
+
+        // Assert
+        Assert.That(result, Is.EqualTo(5));
+    }
+    [Test]
     public void Subtract()
     {
         // Arrange
