@@ -48,6 +48,23 @@ public class CachedCalculatorTest
         Assert.That(calc._cache.Count, Is.EqualTo(1));
     }
     [Test]
+    public void Add_NoCalcConstructor()
+    {
+        // Arrange
+        var calc = new CachedCalculator();
+        var a = 2;
+        var b = 3;
+        var c = 5;
+
+        // Act
+        calc.Add(a, b);
+        calc.Add(b, c);
+        var result = calc.Add(b, c);
+
+        // Assert
+        Assert.That(result, Is.EqualTo(8));
+    }
+    [Test]
     public void Subtract()
     {
         // Arrange
