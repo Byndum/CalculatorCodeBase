@@ -74,6 +74,20 @@ public class CachedCalculatorTest
         Assert.That(result, Is.EqualTo(39916800));
     }
     [Test]
+    public void Factorial_ValidPossitiveIntCached_FactorialOfNumber()
+    {
+        // Arrange
+        var calc = new CachedCalculator();
+        var a = 11;
+
+        // Act
+        calc.Factorial(a);
+        var result = calc.Factorial(a);
+
+        // Assert
+        Assert.That(result, Is.EqualTo(39916800));
+    }
+    [Test]
     public void Factorial_Integer0_Returns1()
     {
         // Arrange
@@ -106,6 +120,20 @@ public class CachedCalculatorTest
         var a = 7;
 
         // Act
+        var result = calc.IsPrime(a);
+
+        // Assert
+        Assert.IsTrue(result);
+    }
+    [Test]
+    public void IsPrime_ValidPossitiveIntCached_IsPrime()
+    {
+        // Arrange
+        var calc = new CachedCalculator();
+        var a = 7;
+
+        // Act
+        calc.IsPrime(a);
         var result = calc.IsPrime(a);
 
         // Assert
