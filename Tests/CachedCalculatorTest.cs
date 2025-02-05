@@ -34,6 +34,20 @@ public class CachedCalculatorTest
         Assert.That(result, Is.EqualTo(5));
     }
     [Test]
+    public void Add_CachedEmpty()
+    {
+        // Arrange
+        var calc = new CachedCalculator();
+        var a = 2;
+        var b = 3;
+
+        // Act
+        calc.Add(a, b);
+
+        // Assert
+        Assert.That(calc._cache, Is.EqualTo(null));
+    }
+    [Test]
     public void Subtract()
     {
         // Arrange
