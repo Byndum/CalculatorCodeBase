@@ -36,7 +36,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
             name: CoverageReport-files
-            path: coverage-report/
+            path: coverage-report
         # Complete this step sp it uploads the coverage report to the artifacts - make it run always even if previous steps fail
 
       - name: Collect Stryker Report
@@ -44,6 +44,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
             name: StrykerReport-files
-            path: StrykerOutput/**/reports/
+            path: StrykerOutput
         # Complete this step so it uploads the Stryker report to the artifacts - make it run always even if previous steps fail
     
