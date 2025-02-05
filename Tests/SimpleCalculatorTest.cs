@@ -112,6 +112,19 @@ public class SimpleCalculatorTest
         Assert.IsTrue(result);
     }
     [Test]
+    public void IsPrime_ValidPossitiveIntEdgecase_IsPrime()
+    {
+        // Arrange
+        var calc = new SimpleCalculator();
+        var a = 2;
+
+        // Act
+        var result = calc.IsPrime(a);
+
+        // Assert
+        Assert.IsTrue(result);
+    }
+    [Test]
     public void IsPrime_ValidPossitiveInt_IsNotPrime()
     {
         // Arrange
