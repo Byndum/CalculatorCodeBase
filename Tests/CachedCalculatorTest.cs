@@ -22,7 +22,7 @@ public class CachedCalculatorTest
     public void Subtract()
     {
         // Arrange
-        var calc = new SimpleCalculator();
+        var calc = new CachedCalculator();
         var a = 5;
         var b = 3;
 
@@ -36,7 +36,7 @@ public class CachedCalculatorTest
     public void Multiply()
     {
         // Arrange
-        var calc = new SimpleCalculator();
+        var calc = new CachedCalculator();
         var a = 5;
         var b = 2;
 
@@ -50,7 +50,7 @@ public class CachedCalculatorTest
     public void Divide()
     {
         // Arrange
-        var calc = new SimpleCalculator();
+        var calc = new CachedCalculator();
         var a = 10;
         var b = 2;
 
@@ -64,7 +64,7 @@ public class CachedCalculatorTest
     public void Factorial_ValidPossitiveInt_FactorialOfNumber()
     {
         // Arrange
-        var calc = new SimpleCalculator();
+        var calc = new CachedCalculator();
         var a = 11;
 
         // Act
@@ -77,7 +77,7 @@ public class CachedCalculatorTest
     public void Factorial_Integer0_Returns1()
     {
         // Arrange
-        var calc = new SimpleCalculator();
+        var calc = new CachedCalculator();
         var a = 0;
 
         // Act
@@ -90,7 +90,7 @@ public class CachedCalculatorTest
     public void Factorial_InvalidNegativeInt_ThrowsArgumentException()
     {
         // Arrange
-        var calc = new SimpleCalculator();
+        var calc = new CachedCalculator();
         var invalidVal = -1;
 
         // Act + Assert
@@ -102,7 +102,7 @@ public class CachedCalculatorTest
     public void IsPrime_ValidPossitiveInt_IsPrime()
     {
         // Arrange
-        var calc = new SimpleCalculator();
+        var calc = new CachedCalculator();
         var a = 7;
 
         // Act
@@ -115,7 +115,7 @@ public class CachedCalculatorTest
     public void IsPrime_ValidPossitiveInt_IsNotPrime()
     {
         // Arrange
-        var calc = new SimpleCalculator();
+        var calc = new CachedCalculator();
         var a = 4;
 
         // Act
@@ -128,7 +128,7 @@ public class CachedCalculatorTest
     public void IsPrime_Integer1_IsNotPrime()
     {
         // Arrange
-        var calc = new SimpleCalculator();
+        var calc = new CachedCalculator();
         var a = 1;
 
         // Act
