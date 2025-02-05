@@ -29,7 +29,7 @@ jobs:
 
       - name: Run Mutation Tests
         run: | # Write a command to execute mutation tests using Stryker with a threshold of 80% mutation score
-            dotnet stryker
+            dotnet stryker --break-at 80
 
       - name: Collect Coverage Report
         if: always()
