@@ -19,20 +19,6 @@ public class CachedCalculatorTest
         Assert.That(result, Is.EqualTo(5));
     }
     [Test]
-    public void Add_MethodEmpty()
-    {
-        // Arrange
-        var calc = new CachedCalculator();
-        var a = 2;
-        var b = 3;
-
-        // Act
-        var result = calc.Add(a, b);
-
-        // Assert
-        Assert.That(result, !Is.Null);
-    }
-    [Test]
     public void Add_Cached()
     {
         // Arrange
