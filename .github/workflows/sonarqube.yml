@@ -25,7 +25,7 @@ jobs:
           dotnet sonarscanner begin \
             /k:${{ vars.MY_PROJECT_KEY }} \
             /d:sonar.host.url=${{ vars.HOST_URL }} \
-            /d:sonar.token=${{ vars.MY_TOKEN }} \
+            /d:sonar.token=${{ secrets.MY_TOKEN }} \
             /d:sonar.coverageReportPaths="coverage-report/SonarQube.xml" \
             /d:sonar.qualitygate.wait=true \
             /d:sonar.qualitygate.timeout=300
