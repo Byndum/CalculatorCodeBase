@@ -29,6 +29,7 @@ jobs:
             /d:sonar.qualitygate.wait=true \
             /d:sonar.qualitygate.timeout=300
 
+      #random comment
       - name: Build
         run: dotnet build
 
