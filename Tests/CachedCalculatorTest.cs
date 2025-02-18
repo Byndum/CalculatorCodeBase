@@ -45,7 +45,7 @@ public class CachedCalculatorTest
         calc.Add(a, b);
 
         // Assert
-        Assert.That(calc._cache.Count, Is.EqualTo(1));
+        Assert.That(calc.Cache, Has.Count.EqualTo(1));
     }
     [Test]
     public void Add_NoCalcConstructor()
@@ -214,7 +214,7 @@ public class CachedCalculatorTest
         var result = calc.IsPrime(a);
 
         // Assert
-        Assert.IsTrue(result);
+        Assert.That(result, Is.True);
     }
     [Test]
     public void IsPrime_ValidPossitiveIntCached_IsPrime()
@@ -228,7 +228,7 @@ public class CachedCalculatorTest
         var result = calc.IsPrime(a);
 
         // Assert
-        Assert.IsTrue(result);
+        Assert.That(result, Is.True);
     }
     [Test]
     public void IsPrime_ValidPossitiveInt_IsNotPrime()
@@ -241,7 +241,7 @@ public class CachedCalculatorTest
         var result = calc.IsPrime(a);
 
         // Assert
-        Assert.IsFalse(result);
+        Assert.That(result, Is.False);
     }
     [Test]
     public void IsPrime_Integer1_IsNotPrime()
@@ -254,6 +254,6 @@ public class CachedCalculatorTest
         var result = calc.IsPrime(a);
 
         // Assert
-        Assert.IsFalse(result);
+        Assert.That(result, Is.False);
     }
 }

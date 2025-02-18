@@ -109,7 +109,7 @@ public class SimpleCalculatorTest
         var result = calc.IsPrime(a);
 
         // Assert
-        Assert.IsTrue(result);
+        Assert.That(result, Is.True);
     }
     [Test]
     public void IsPrime_ValidPossitiveIntEdgecase_IsPrime()
@@ -122,7 +122,7 @@ public class SimpleCalculatorTest
         var result = calc.IsPrime(a);
 
         // Assert
-        Assert.IsTrue(result);
+        Assert.That(result, Is.True);
     }
     [Test]
     public void IsPrime_ValidPossitiveInt_IsNotPrime()
@@ -135,7 +135,7 @@ public class SimpleCalculatorTest
         var result = calc.IsPrime(a);
 
         // Assert
-        Assert.IsFalse(result);
+        Assert.That(result, Is.False);
     }
     [Test]
     public void IsPrime_Integer1_IsNotPrime()
@@ -148,6 +148,6 @@ public class SimpleCalculatorTest
         var result = calc.IsPrime(a);
 
         // Assert
-        Assert.IsFalse(result);
+        Assert.That(result, Is.False);
     }
 }
