@@ -5,7 +5,7 @@ namespace Calculator;
 public class CachedCalculator : ICalculator
 {
     public readonly SimpleCalculator _calculator = new();
-    private Dictionary<string, Calculation> _cache = new();
+    private readonly Dictionary<string, Calculation> _cache = new();
     public IReadOnlyDictionary<string, Calculation> Cache => _cache;
     
     public int Add(int a, int b)
