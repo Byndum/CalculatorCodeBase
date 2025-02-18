@@ -8,6 +8,7 @@ on:
 jobs:
   integration:
     runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -20,16 +21,15 @@ jobs:
           dotnet tool install -g dotnet-reportgenerator-globaltool
           
       - name: Start Static Code Analysis
-        run: | # INSERT RELEVANT VARIABLES BELOW
+        run: |
           dotnet sonarscanner begin \
-            /k:${{ vars.MY_PROJECT_KEY }} \ 
+            /k:${{ vars.MY_PROJECT_KEY }} \
             /d:sonar.host.url=${{ vars.HOST_URL }} \
-            /d:sonar.token=${{ secrets.MY_TOKEN }} \
+            /d:sonar.token=${{ vars.MY_TOKEN }} \
             /d:sonar.coverageReportPaths="coverage-report/SonarQube.xml" \
             /d:sonar.qualitygate.wait=true \
             /d:sonar.qualitygate.timeout=300
 
-      #random comment
       - name: Build
         run: dotnet build
 
@@ -44,7 +44,6 @@ jobs:
             -reporttypes:SonarQube
 
       - name: Complete Static Code Analysis
-        run: | # INSERT RELEVANT VARIABLES BELOW
+        run: |
           dotnet sonarscanner end \
-            /d:sonar.token=${{ secrets.MY_TOKEN }}
-      #COMMENT!
+            /d:sonar.token=${{ vars.MY_TOKEN }}
