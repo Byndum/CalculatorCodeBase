@@ -46,4 +46,4 @@ jobs:
       - name: Complete Static Code Analysis
         run: |
           dotnet sonarscanner end \
-            /d:sonar.token=${{ vars.MY_TOKEN }}
+            /d:sonar.token=${{ secrets.MY_TOKEN }}
