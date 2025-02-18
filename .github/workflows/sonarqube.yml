@@ -39,11 +39,12 @@ jobs:
       - name: Generate report
         run: |
           reportgenerator \
-          -reports:TestResults/**/coverage.cobertura.xml \
-          -targetdir:coverage-report \
-          -reporttypes:SonarQube
+            -reports:TestResults/**/coverage.cobertura.xml \
+            -targetdir:coverage-report \
+            -reporttypes:SonarQube
 
       - name: Complete Static Code Analysis
         run: | # INSERT RELEVANT VARIABLES BELOW
           dotnet sonarscanner end \
             /d:sonar.token=${{ secrets.MY_TOKEN }}
+      #COMMENT!
