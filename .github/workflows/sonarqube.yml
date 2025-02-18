@@ -3,7 +3,7 @@ name: sonarqube.yml
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   integration:
